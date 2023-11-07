@@ -1,7 +1,7 @@
 # Exercício-1---Assembly Helio Henrique Cruz - FEAP AVARÉ -  Engenharia da Computação
 section .data
-    msgPrompt db "Por favor, digite seu nome: ", 0
-    msgGreetings db "Saudações, ", 0
+    msgPrompt db "Digite seu nome: ", 0
+    msgGreetings db "Olá", 0
     buffer resb 64 ; buffer para armazenar o nome do usuário
 
 section .bss
@@ -65,8 +65,8 @@ copy_string:
         ret
 
 section .data
-    msgPrompt db "Por favor, digite seu nome: ", 0
-    msgGreetings db "Saudações, ", 0
+    msgPrompt db "Digite seu nome: ", 0
+    msgGreetings db "Olá", 0
     buffer resb 64 ; buffer para armazenar o nome do usuário
 
 section .bss
@@ -95,7 +95,7 @@ _start:
     mov edi, name     ; destino
     call copy_string
 
-    ; Exibe a mensagem de saudações
+    ; Exibe a mensagem de Olá
     mov eax, 4        ; syscall write
     mov ebx, 1        ; descritor de arquivo (stdout)
     mov ecx, msgGreetings
